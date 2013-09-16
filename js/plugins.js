@@ -27,7 +27,7 @@ var gettingPics = function gettingPics(){
         type: "GET",
         dataType: "jsonp",
         cache: false,
-        url: "https://api.instagram.com/v1/tags/crmaxv/media/recent?client_id=7359917ce0c44b26b15157dc9f64fbb5&count=-1",
+        url: API_URL,
         success: function(data) {
 
 
@@ -37,28 +37,35 @@ var gettingPics = function gettingPics(){
             for (var i = 0; i < length; i++) {
                 // Creating the row
 
+
+                // last item
+
+                if (i+1 <= length) {
+                    $('.item-'+(i+LAST_ITEM))
+                }
+
                 // Creating the img
                 if (data.data[i].type == 'image') {
                     var append = '<div class="contener">';
                         append += '<div class="text-container ">';
                         append += '<p class="text">';
-                    append+= data.data[i].user.full_name;
+                        append+= data.data[i].user.full_name;
 
                     
-                    append += "</p>";
-                    append += '</div>';
+                        append += "</p>";
+                        append += '</div>';
                 
-                     append += '<div class="imgcontener">';
+                        append += '<div class="imgcontener">';
 
-                    append += '<img src="';
-                   append +=  data.data[i].images.standard_resolution.url;
-                   append += '"'
-                    append += '  alt="Product Name"> ';
+                        append += '<img src="';
+                        append +=  data.data[i].images.standard_resolution.url;
+                        append += '"'
+                        append += '  alt="Product Name"> ';
                     
-                    append += '</div>';
+                        append += '</div>';
                  
                     
-                    append +=  '</div>';
+                        append +=  '</div>';
 
                     $('.g').append(append);
 

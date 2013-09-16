@@ -21,23 +21,31 @@
     }
 }());
 
+LAST_ITEM = 0;
+
 // Place any jQuery/helper plugins in here.
 var gettingPics = function gettingPics() {
     $.ajax({
         type: "GET",
         dataType: "jsonp",
         cache: false,
-        url: "https://api.instagram.com/v1/tags/crmaxv/media/recent?client_id=7359917ce0c44b26b15157dc9f64fbb5&count=-1",
+        url: API_URL,
         success: function(data) {
-            console.log(data);
-            var length = data.data.length,
-                j = 0;
+
+            // next api call url
+            API_URL = data.pagination.next_url;
+
+            var length = data.data.length;
+                // j = 0;
             for (var i = 0; i < length; i++) {
                 // Creating the row
 
+
+
+
                 // Creating the img
                 if (data.data[i].type == 'image') {
-                    var append = '<div class="contener">';
+                    var append = '<div class="contener item-'+(i+LAST_ITEM)+'" ">';
                      append += '<div class="imgcontener">'
                     append += '<img src="';
                    append +=  data.data[i].images.standard_resolution.url;
@@ -73,6 +81,13 @@ var gettingPics = function gettingPics() {
                     newButton.appendChild(texte);
                     document.getElementsByClassName('item-' + i)[0].appendChild(newDivDesc);
                     document.getElementsByClassName('item-desc-' + i)[0].appendChild(newButton);*/
+
+                    // last item
+
+                    if (i+1 == length) {
+                        $('.item-'+(i+LAST_ITEM)).addClass('last-item');
+                        LAST_ITEM = i+1;
+                    }
                 }
 
             }
