@@ -32,6 +32,8 @@ var gettingPics = function gettingPics() {
         url: API_URL,
         success: function(data) {
 
+            $('.wait').remove();
+
             // next api call url
             API_URL = data.pagination.next_url;
 
@@ -61,6 +63,7 @@ var gettingPics = function gettingPics() {
 
                     $('.g').append(append);
 
+                    // delayed fadeIn effect
                     $('.item-'+(i+LAST_ITEM)).delay(i*50).fadeIn();
 
 
@@ -89,6 +92,9 @@ var gettingPics = function gettingPics() {
                     if (i+1 == length) {
                         $('.item-'+(i+LAST_ITEM)).addClass('last-item');
                         LAST_ITEM = i+1;
+                        if (API_URL) {
+                            $('.g').append('<div class="contener" ><div class="wait">...</div></div>');
+                        }
                     }
                 }
 

@@ -38,11 +38,7 @@ var gettingPics = function gettingPics(){
                 // Creating the row
 
 
-                // last item
 
-                if (i+1 <= length) {
-                    $('.item-'+(i+LAST_ITEM))
-                }
 
                 // Creating the img
                 if (data.data[i].type == 'image') {
@@ -68,6 +64,16 @@ var gettingPics = function gettingPics(){
                         append +=  '</div>';
 
                     $('.g').append(append);
+
+
+                    // last item
+
+                    if (i+1 == length) {
+                        $('.item-'+(i+LAST_ITEM));
+
+
+                        $('.g').append('<div class="contener" ><div class="wait">...</div></div>');
+                    }
 
               /*                var append = '<div class="span3 item container-item">';
                      append += '<div class="span12 center item-desc">'

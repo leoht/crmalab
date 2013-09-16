@@ -11,6 +11,7 @@
 
 		</ul>
 	</div>
+
 </body>
     <script src="vendor/jquery-1.10.1.min.js"></script>
 	<script src="plugin.js"></script>

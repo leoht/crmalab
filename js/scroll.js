@@ -6,11 +6,9 @@ $(function(){
 	
 		if ($('body').scrollTop() + 2000 >= last.offset().top && API_URL) {
 
-			
-			
 			gettingPics();
 			last.removeClass('last-item');
-
+			
 		}
 	});
 })
