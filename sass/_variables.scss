@@ -1,0 +1,10 @@
+@import "_mixins";
+/* My variables */
+$white: #fff;
+$black: #000;
+$red: red;
+
+
+.transition {
+    @include transition(all, 0.195s, ease-in-out);
+}

@@ -1,0 +1,55 @@
+.span12 {
+    width: 100%;
+}
+.span11 {
+    width: (100%-(100%/12));
+}
+.span10 {
+    width: (100%-(2*(100%/12)));
+}
+.span9 {
+    width: (100%-(3*(100%/12)));
+}
+.span8 {
+    width: (100%-(4*(100%/12)));
+}
+.span7 {
+    width: (100%-(5*(100%/12)));
+}
+.span6 {
+    width: (100%-(6*(100%/12)));
+}
+.span5 {
+    width: (100%-(7*(100%/12)));
+}
+.span4 {
+    width: (100%-(8*(100%/12)));
+}
+.span3 {
+    width: (100%-(9*(100%/12)));
+}
+.span2 {
+    width: (100%-(10*(100%/12)));
+}
+.span1 {
+    width: (100%-(11*(100%/12)));
+}
+
+.append-1 {
+    margin-right: (100%-(11*(100%/12)));
+}
+.append-half {
+    margin-right: ((100%-(11*(100%/12)))/2);
+}
+.prepend-1 {
+    margin-left: (100%-(11*(100%/12)));
+}
+.prepend-half {
+    margin-left: ((100%-(11*(100%/12)))/2);
+}
+.center {
+    text-align: center;
+}
+.right {
+    float: right;
+}

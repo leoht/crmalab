@@ -1,0 +1,101 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "_variables";
+@import "_grid";
+body {
+    background: #000;
+}
+.header {
+    top: 15px;
+    position: fixed;
+    z-index: 999;
+    .header-img {
+        width: 100%;
+        height: 100%;
+    }
+    .logo {
+        min-width: 100px;
+        min-height: 100px;
+    }
+}
+.content {
+    width: 100%;
+    .row {
+        display: inline-block;
+        margin-bottom: -6px;
+        .item {
+//            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            min-width: 300px;
+            min-height: 300px;
+            margin-bottom: -3px;
+            .item-desc-video {
+                position: absolute;
+                text-align: center;
+                top: 0px;
+                background: rgba(0, 0, 0, 0.4);
+                min-height: 30px;
+                .button-user {
+                    display: block;
+                    text-align: center;
+                    color: $white;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    line-height: 30px;
+                    background: transparent;
+                    font-family: sans-serif;
+                    text-decoration: none;
+                    @extend .transition;
+                    margin: 0 auto;
+                    min-width: 300px;
+                    min-height: 30px;
+                }
+                .button-user:hover {
+                    @extend .transition;
+                    opacity: 0.8;
+                }
+
+            }
+            .item-desc {
+                position: absolute;
+                text-align: center;
+                bottom: 6px;
+                background: rgba(0, 0, 0, 0.4);
+                min-height: 30px;
+                .button-user {
+                    display: block;
+                    text-align: center;
+                    color: $white;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    line-height: 30px;
+                    background: transparent;
+                    font-family: sans-serif;
+                    text-decoration: none;
+                    @extend .transition;
+                    margin: 0 auto;
+                    min-width: 300px;
+                    min-height: 30px;
+                }
+                .button-user:hover {
+                    @extend .transition;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 599px) and (min-width: 300px) {
+    .item {
+        clear: both;
+        margin: 0 auto;
+        float: none !important;
+    }
+}
