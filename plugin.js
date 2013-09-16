@@ -45,7 +45,7 @@ var gettingPics = function gettingPics() {
 
                 // Creating the img
                 if (data.data[i].type == 'image') {
-                    var append = '<div class="contener item-'+(i+LAST_ITEM)+'" ">';
+                    var append = '<div style="display:none;" class="contener item-'+(i+LAST_ITEM)+'" ">';
                      append += '<div class="imgcontener">'
                     append += '<img src="';
                    append +=  data.data[i].images.standard_resolution.url;
@@ -60,6 +60,8 @@ var gettingPics = function gettingPics() {
                     append +=  '</div>';
 
                     $('.g').append(append);
+
+                    $('.item-'+(i+LAST_ITEM)).delay(i*50).fadeIn();
 
 
                   /*  var newDivImg = document.createElement('div');
